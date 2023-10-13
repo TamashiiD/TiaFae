@@ -37,7 +37,6 @@ export default function NewGame({ score, gameover, gameRunning, gamerunningtrue,
                 if (event.key === "r" || event.key === "R") {
                   // Perform your action here
                     handleSquareClick(0)
-                  console.log("Key 'RRRR' was pressed!");
                   // You can replace the console.log with the action you want to perform.
                 }
                 if (event.key === "t" || event.key === "T") {
@@ -53,7 +52,6 @@ export default function NewGame({ score, gameover, gameRunning, gamerunningtrue,
                   if (event.key === "f" || event.key === "F") {
                     // Perform your action here
                       handleSquareClick(3)
-                      console.log("f was pressed")
                     // You can replace the console.log with the action you want to perform.
                   }
                   if (event.key === "g" || event.key === "G") {
@@ -81,26 +79,6 @@ export default function NewGame({ score, gameover, gameRunning, gamerunningtrue,
                       handleSquareClick(8)
                     // You can replace the console.log with the action you want to perform.
                   }
-                //   if (event.key === "r" || event.key === "R") {
-                //     // Perform your action here
-                //       handleSquareClick(0)
-                //     // You can replace the console.log with the action you want to perform.
-                //   }
-                //   if (event.key === "r" || event.key === "R") {
-                //     // Perform your action here
-                //       handleSquareClick(0)
-                //     // You can replace the console.log with the action you want to perform.
-                //   }
-                //   if (event.key === "r" || event.key === "R") {
-                //     // Perform your action here
-                //       handleSquareClick(0)
-                //     // You can replace the console.log with the action you want to perform.
-                //   }
-                //   if (event.key === "r" || event.key === "R") {
-                //     // Perform your action here
-                //       handleSquareClick(0)
-                //     // You can replace the console.log with the action you want to perform.
-                //   }
               };
 
 
