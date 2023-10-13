@@ -29,7 +29,7 @@ export default function TagGame() {
         setGameRunning(true)
     }
     function over(){
-        alert("GAME OVER", score)
+        alert("GAME OVER ")
        gamerunningfalse()
     }
 
@@ -40,6 +40,8 @@ export default function TagGame() {
                 <h1>THIS IS THE TAG GAME</h1>
                
                 <h3>Click the Red Tag as Many Times as You Can</h3>
+                <p> {score} <strong>Score</strong></p>
+
                 <div>
                 <NewGame 
                 score={score}
@@ -50,7 +52,6 @@ export default function TagGame() {
                 setthescoreminus={setthescoreminus}
                 setthescore={setthescore}/> 
                </div>
-                <p> {score} <strong>Score</strong></p>
             </div>
         </>
 
