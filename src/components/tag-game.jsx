@@ -29,7 +29,7 @@ export default function TagGame() {
         setGameRunning(true)
     }
     function over(){
-        alert("GAME OVER")
+        alert("GAME OVER", score)
        gamerunningfalse()
     }
 
