@@ -21,6 +21,7 @@ export default function NewGame({ score, gameover, gameRunning, gamerunningtrue,
     useEffect(() => {
         // Regenerate the red square every 3 seconds if the game is running
         if (gameRunning) {
+
             const intervalId = setInterval(() => {
                 const newRedIndex = Math.floor(Math.random() * 8);
 
@@ -29,7 +30,91 @@ export default function NewGame({ score, gameover, gameRunning, gamerunningtrue,
                 }
             }, seconds);
 
-            return () => clearInterval(intervalId); // Clean up the interval
+
+
+            const handleKeyDown = (event) => {
+                // Check if the pressed key is the 'A' key (you can use any key you want)
+                if (event.key === "r" || event.key === "R") {
+                  // Perform your action here
+                    handleSquareClick(0)
+                  console.log("Key 'RRRR' was pressed!");
+                  // You can replace the console.log with the action you want to perform.
+                }
+                if (event.key === "t" || event.key === "T") {
+                    // Perform your action here
+                      handleSquareClick(1)
+                    // You can replace the console.log with the action you want to perform.
+                  }
+                  if (event.key === "y" || event.key === "Y") {
+                    // Perform your action here
+                      handleSquareClick(2)
+                    // You can replace the console.log with the action you want to perform.
+                  }
+                  if (event.key === "f" || event.key === "F") {
+                    // Perform your action here
+                      handleSquareClick(3)
+                      console.log("f was pressed")
+                    // You can replace the console.log with the action you want to perform.
+                  }
+                  if (event.key === "g" || event.key === "G") {
+                    // Perform your action here
+                      handleSquareClick(4)
+                    // You can replace the console.log with the action you want to perform.
+                  }
+                  if (event.key === "h" || event.key === "H") {
+                    // Perform your action here
+                      handleSquareClick(5)
+                    // You can replace the console.log with the action you want to perform.
+                  }
+                  if (event.key === "v" || event.key === "V") {
+                    // Perform your action here
+                      handleSquareClick(6)
+                    // You can replace the console.log with the action you want to perform.
+                  }
+                  if (event.key === "b" || event.key === "B") {
+                    // Perform your action here
+                      handleSquareClick(7)
+                    // You can replace the console.log with the action you want to perform.
+                  }
+                  if (event.key === "n" || event.key === "N") {
+                    // Perform your action here
+                      handleSquareClick(8)
+                    // You can replace the console.log with the action you want to perform.
+                  }
+                //   if (event.key === "r" || event.key === "R") {
+                //     // Perform your action here
+                //       handleSquareClick(0)
+                //     // You can replace the console.log with the action you want to perform.
+                //   }
+                //   if (event.key === "r" || event.key === "R") {
+                //     // Perform your action here
+                //       handleSquareClick(0)
+                //     // You can replace the console.log with the action you want to perform.
+                //   }
+                //   if (event.key === "r" || event.key === "R") {
+                //     // Perform your action here
+                //       handleSquareClick(0)
+                //     // You can replace the console.log with the action you want to perform.
+                //   }
+                //   if (event.key === "r" || event.key === "R") {
+                //     // Perform your action here
+                //       handleSquareClick(0)
+                //     // You can replace the console.log with the action you want to perform.
+                //   }
+              };
+
+
+              window.addEventListener("keydown", handleKeyDown);
+
+
+
+
+             // Clean up the interval
+              return () => {
+                clearInterval(intervalId)
+                window.removeEventListener("keydown", handleKeyDown);
+              };
+           // add a function that will also run 
         }
     }, [gameRunning, redIndex]);
 

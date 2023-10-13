@@ -12,6 +12,7 @@
   "dependencies": {
     "@auth0/auth0-react": "^2.2.1",
     "autoprefixer": "^10.4.16",
+    "firebase": "^10.5.0",
     "flowbite-react": "^0.6.4",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",

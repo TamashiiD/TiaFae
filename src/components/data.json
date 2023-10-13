@@ -1,0 +1,54 @@
+{
+    "users":{
+        "jane": {
+            "dob": "10/10/00",
+            "games": {
+                "tagscore": 0
+            },
+            "contacts": {
+                "jill": true,
+                "John": true
+
+            }
+        },
+        "jill": {
+            "dob": "10/10/00",
+            "highestscore": 0,
+            "contacts": {
+                "john": true,
+                "jane": true
+
+            }
+        },
+        "john": {
+            "dob": "10/10/00",
+            "games": {
+                "tagscore": 0
+            },
+            "contacts": {
+                "jill": true
+                
+
+            }
+        },
+        "harleyh": {
+            "dob": "10/10/00",
+            "games": {
+                "tagscore": 0
+            },
+            "contacts": {
+                "jill": true,
+                "john": true
+
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+}

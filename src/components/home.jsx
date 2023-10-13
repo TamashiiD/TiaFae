@@ -7,18 +7,20 @@ import { Link } from "react-router-dom";
 const options = ["Tag! You're It!", "Run, You Are Not It"]
 
 function Home() {
+    const [enablebutton, setenablebutton]= useState(true)
     const { isAuthenticated } = useAuth0();
+
+    const username = "username"
+
 
     return (
         <div id="HOME">
             {isAuthenticated ?
                 <div>
                     <BeautifulDropdown />
-
                     <h1> Hello World </h1>
                     <p> Wanna Play Tag?</p>
-
-                    <button> <Link className="links" to="/taggame">Touch</Link> </button>
+                    <button disabled={enablebutton}> <Link className="links" to="/taggame">Touch</Link> </button>
                 </div> :
 
                 <LogIn />

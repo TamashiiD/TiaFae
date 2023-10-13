@@ -37,7 +37,9 @@ export default function TagGame() {
         <>
             <div id="TAGGAME">
                 <BeautifulDropdown />
-                <h1>THIS IS THE TAG GAME</h1>
+                <h1>THIS IS THE TAG GAME</h1> 
+                <div> keyboard controls <br/>r  t  y <br/>f  g  h <br/>v  b  n </div>
+
                
                 <h3>Click the Red Tag as Many Times as You Can</h3>
                 <p> {score} <strong>Score</strong></p>
