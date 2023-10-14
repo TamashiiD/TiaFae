@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ipsum } from "./lorum";
 
 export default function Lorum() {
@@ -8,6 +8,8 @@ export default function Lorum() {
     const [count, setCount] = useState(0)
     const [bacon, setbacon] = useState(0)
     const [totalcorrect, settotalcorrect] = useState([])
+    const inputRef = useRef(null);
+
 
 
 
@@ -38,6 +40,10 @@ export default function Lorum() {
     }, [gameon, count, totalcorrect])
 
     function matching(key, count) {
+        if(count === ipsum.length-1){
+           
+            endgamewin()
+        }
         if (ipsum[count] === "_" && key === " ") {
             const newBackground = [...backgroundColor];
             newBackground[count] = "green";
@@ -62,11 +68,22 @@ export default function Lorum() {
 
     }
 
+    function endgamewin(){
+        setBackgroundcolor(Array(ipsum.length).fill("white"));
+        const wpm = handleTyping()
+        setTimeout(() => {
 
+            alert("Winner!! " + wpm + " words per minute");
+            setGameon(false);
+            setCount(0);
+
+        }, 2);   
+    }
+    
     function gameover() {
         setBackgroundcolor(Array(ipsum.length).fill("white"));
-       const wpm = handleTyping()
-      // Store the words per minute value
+        const wpm = handleTyping()
+        // Store the words per minute value
 
         setTimeout(() => {
 
@@ -86,7 +103,9 @@ export default function Lorum() {
         setCount(0)
         setbacon(0)
         settotalcorrect([])
-        
+
+
+
 
 
     }
@@ -98,7 +117,7 @@ export default function Lorum() {
         setBackgroundcolor(Array(ipsum.length).fill("white"));
         clearInterval(totalMilliseconds);
         setTotalMilliseconds(0);
-       
+
         settotalcorrect([])
     }
 
@@ -131,9 +150,20 @@ export default function Lorum() {
 
     return (
         <>
-            <button style={{
-                marginBottom: "1rem"
-            }} onClick={handleclick}> START</button>
+
+            <div onClick={() => {inputRef.current.focus(); console.log("the keyboard should pop up now") }} style={{ cursor: "text" }}>
+                 <input
+                    ref={inputRef}
+                    style={{ opacity: 0, position: "absolute", top: -1000, left: -1000 }}
+                    type="text"
+                    placeholder="its here"
+                />
+                <button style={{
+                    marginBottom: "1rem"
+                }}
+                onClick={handleclick}> START</button>
+               
+            </div>
             <button onClick={stop}>STOP</button>
             <div>
                 <div>{formatTime(totalMilliseconds)} <strong>Time</strong> </div>
