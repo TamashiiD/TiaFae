@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function NewGame({ score, gameover, gameRunning, gamerunningtrue, setthescore, setthescoreminus }) {
+export default function NewGame({ score, gameRunning, gamerunningtrue, setthescore, setthescoreminus }) {
     const [redIndex, setRedIndex] = useState(
         null) // Generates a random index for the red square (0-11)
         ;

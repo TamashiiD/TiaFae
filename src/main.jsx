@@ -10,6 +10,7 @@ import './index.css'
 import Profile from './components/profile.jsx';
 import Home from './components/home.jsx';
 import TagGame from './components/tag-game.jsx';
+import NewGame from './components/newgame.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,8 @@ const router = createBrowserRouter([
   {
     path: "/taggame/*",
     element: <TagGame/>
-  }
+  },
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
