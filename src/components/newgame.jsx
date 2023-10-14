@@ -90,7 +90,7 @@ export default function NewGame({ score, gameRunning, gamerunningtrue, setthesco
              // Clean up the interval
               return () => {
                 clearInterval(intervalId)
-                window.removeEventListener("keydown", handleKeyDown);
+                document.removeEventListener("keydown", handleKeyDown);
               };
            // add a function that will also run 
         }
