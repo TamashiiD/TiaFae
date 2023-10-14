@@ -132,6 +132,7 @@ export default function Lorum() {
                                 height: "10px",
                                 padding: "1rem",
                                 backgroundColor: backgroundColor[index],
+                                fontSize:"25px"
                             }}
                         >
                             {char === " " && "_"}
