@@ -82,7 +82,7 @@ export default function NewGame({ score, gameRunning, gamerunningtrue, setthesco
               };
 
 
-              window.addEventListener("keydown", handleKeyDown);
+              document.addEventListener("keydown", handleKeyDown);
 
 
 

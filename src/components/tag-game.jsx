@@ -7,7 +7,6 @@ import NewGame from "./newgame";
 export default function TagGame() {
 
     const [score, setScore] = useState(0)
-    const [gameover, setGameOver] = useState(false)
     const [gameRunning, setGameRunning] = useState(false);
 
 
@@ -17,7 +16,6 @@ export default function TagGame() {
     }
     function reset() {
         setScore(0)
-        setGameOver(false)
     }
     function setthescoreminus() {
         reset()

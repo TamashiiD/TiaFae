@@ -34,9 +34,6 @@ const BeautifulDropdown = () => {
 
     return (
       <>
-      <Routes>
-        <Route path="/profile" component={Profile} />
-      </Routes>
 
       <div className="beautiful-dropdown">
         <div className="dropdown-header" onClick={toggleDropdown}>
