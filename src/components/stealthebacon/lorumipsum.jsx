@@ -128,8 +128,8 @@ export default function Lorum() {
                         <div
                             key={index}
                             style={{
-                                width: "10px",
-                                height: "10px",
+                                width: "15px",
+                                height: "25px",
                                 padding: "1rem",
                                 backgroundColor: backgroundColor[index],
                                 fontSize:"25px"
