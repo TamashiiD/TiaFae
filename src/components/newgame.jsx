@@ -14,7 +14,7 @@ export default function NewGame({ score, gameover, gameRunning, gamerunningtrue,
 
     // Function to start the game
     const startGame = () => {
-        setRedIndex(Math.floor(Math.random() * 12));
+        setRedIndex(Math.floor(Math.random() * 9));
         gamerunningtrue();
     };
 
@@ -23,7 +23,7 @@ export default function NewGame({ score, gameover, gameRunning, gamerunningtrue,
         if (gameRunning) {
 
             const intervalId = setInterval(() => {
-                const newRedIndex = Math.floor(Math.random() * 8);
+                const newRedIndex = Math.floor(Math.random() * 9);
 
                 if (newRedIndex !== redIndex) {
                     setRedIndex(newRedIndex);
@@ -39,42 +39,42 @@ export default function NewGame({ score, gameover, gameRunning, gamerunningtrue,
                     handleSquareClick(0)
                   // You can replace the console.log with the action you want to perform.
                 }
-                if (event.key === "t" || event.key === "T") {
+                else if (event.key === "t" || event.key === "T") {
                     // Perform your action here
                       handleSquareClick(1)
                     // You can replace the console.log with the action you want to perform.
                   }
-                  if (event.key === "y" || event.key === "Y") {
+                 else if (event.key === "y" || event.key === "Y") {
                     // Perform your action here
                       handleSquareClick(2)
                     // You can replace the console.log with the action you want to perform.
                   }
-                  if (event.key === "f" || event.key === "F") {
+                  else if (event.key === "f" || event.key === "F") {
                     // Perform your action here
                       handleSquareClick(3)
                     // You can replace the console.log with the action you want to perform.
                   }
-                  if (event.key === "g" || event.key === "G") {
+                 else if (event.key === "g" || event.key === "G") {
                     // Perform your action here
                       handleSquareClick(4)
                     // You can replace the console.log with the action you want to perform.
                   }
-                  if (event.key === "h" || event.key === "H") {
+                  else if (event.key === "h" || event.key === "H") {
                     // Perform your action here
                       handleSquareClick(5)
                     // You can replace the console.log with the action you want to perform.
                   }
-                  if (event.key === "v" || event.key === "V") {
+                  else if (event.key === "v" || event.key === "V") {
                     // Perform your action here
                       handleSquareClick(6)
                     // You can replace the console.log with the action you want to perform.
                   }
-                  if (event.key === "b" || event.key === "B") {
+                  else if (event.key === "b" || event.key === "B") {
                     // Perform your action here
                       handleSquareClick(7)
                     // You can replace the console.log with the action you want to perform.
                   }
-                  if (event.key === "n" || event.key === "N") {
+                  else if (event.key === "n" || event.key === "N") {
                     // Perform your action here
                       handleSquareClick(8)
                     // You can replace the console.log with the action you want to perform.
@@ -160,7 +160,7 @@ export default function NewGame({ score, gameover, gameRunning, gamerunningtrue,
 
                         {Array.from({ length: 3 }, (_, index) => (
                             <div
-                                key={index}
+                                key={index+3}
                                 style={{
                                     width: "100px",
                                     height: "100px",
@@ -178,7 +178,7 @@ export default function NewGame({ score, gameover, gameRunning, gamerunningtrue,
 
                         {Array.from({ length: 3 }, (_, index) => (
                             <div
-                                key={index}
+                                key={index+6}
                                 style={{
                                     width: "100px",
                                     height: "100px",
