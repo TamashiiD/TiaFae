@@ -12,6 +12,7 @@ import Home from './components/home.jsx';
 import TagGame from './components/taggame/tag-game.jsx';
 import NewGame from './components/taggame/newgame.jsx';
 import Bacon from './components/stealthebacon/steal-the-bacon.jsx';
+import Settings from './components/settings.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/stealthebacon/*",
     element: <Bacon/>
+  },
+  {
+    path: "/profile/settings/*",
+    element: <Settings/>
   }
 
 ]);

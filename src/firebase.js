@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { deflate } from "zlib";
+import { getDatabase } from "firebase/database";
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -16,13 +17,13 @@ const firebaseConfig = {
   messagingSenderId: "879455480635",
   appId: "1:879455480635:web:8c04a622f6b88aa017e51e",
   measurementId: "G-RGVFKSBTYZ",
-  databaseURL:"https://tiafae-default-rtdb.firebaseio.com/"
+  databaseURL: "https://tiafae-default-rtdb.firebaseio.com/"
 
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const database = getDatabase(app);
 
-
-export default app
+export { app, analytics, database }

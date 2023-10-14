@@ -10,7 +10,9 @@ const BeautifulDropdown = () => {
     const options = [
       'Home',
       'Profile',
-      'Log Out',
+      'Settings',
+      'Log Out'
+      
     ];
   
 
@@ -46,6 +48,8 @@ const BeautifulDropdown = () => {
               }>
                 {option === "Profile" && <Link className="links" to="/profile">Profile</Link> }
                 {option === "Home" && <Link className="links" to="/home">Home</Link>}
+               {option === "Settings" && <Link className="links" to="/profile/settings">Settings</Link>}
+
                 {option === "Log Out" && option}
               </li>
             ))}
