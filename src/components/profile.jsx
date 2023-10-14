@@ -70,7 +70,6 @@ export default function Profile() {
                         <button disabled={disabled} onClick={handleclick}>Submit</button>
                     </form>
 
-
                 </div> :
 
                 <LogIn />}

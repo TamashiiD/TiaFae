@@ -7,22 +7,22 @@ export default function Lorum() {
     const [backgroundColor, setBackgroundcolor] = useState("white")
     const [count, setCount] = useState(0)
     const [bacon, setbacon] = useState(0)
+    const [totalcorrect, settotalcorrect] = useState([])
+
+
 
     useEffect(() => {
-         let timer;
-         if (gameon) {
-           
-
-            
+        let timer;
+        if (gameon) {
             timer = setInterval(() => {
                 setTotalMilliseconds((prevTotalMilliseconds) => prevTotalMilliseconds + 100);
-              }, 100);
-            
+            }, 100);
 
-            function handleKeyDown(event){
+
+            function handleKeyDown(event) {
                 event.preventDefault();
                 matching(event.key, count)
-            }
+            };
 
 
             document.addEventListener("keydown", handleKeyDown);
@@ -35,66 +35,74 @@ export default function Lorum() {
             };
         }
 
-
-
-
-
-    }, [gameon, count])
+    }, [gameon, count, totalcorrect])
 
     function matching(key, count) {
-            if (ipsum[count] === "_" && key === " ") {
-                const newBackground = [...backgroundColor];
-                newBackground[count] = "green";
-                setBackgroundcolor(newBackground);
-                setCount(count + 1);
-                setbacon(bacon+1)
-                console.log("this is the problem")
-            } else if (key.toLowerCase() === ipsum[count].toLowerCase()) {
-                const newBackground = [...backgroundColor];
-                newBackground[count] = "green";
-                setBackgroundcolor(newBackground);
-                setbacon(bacon+1)
-                setCount(count + 1);
-                console.log("this is working");
-            } else {
-                const newBackground = [...backgroundColor];
-                newBackground[count] = "red";
-                gameover();
-                setBackgroundcolor(newBackground);
-            }
-        
+        if (ipsum[count] === "_" && key === " ") {
+            const newBackground = [...backgroundColor];
+            newBackground[count] = "green";
+            setBackgroundcolor(newBackground);
+            setCount(count + 1);
+            setbacon(bacon + 1)
+            settotalcorrect([...totalcorrect, key])
+        } else if (key.toLowerCase() === ipsum[count].toLowerCase()) {
+            const newBackground = [...backgroundColor];
+            newBackground[count] = "green";
+            setBackgroundcolor(newBackground);
+            setbacon(bacon + 1)
+            setCount(count + 1);
+            settotalcorrect([...totalcorrect, key])
+        } else {
+            const newBackground = [...backgroundColor];
+            newBackground[count] = "red";
+            gameover();
+            setBackgroundcolor(newBackground);
+
+        }
+
     }
 
 
     function gameover() {
         setBackgroundcolor(Array(ipsum.length).fill("white"));
-      
+       const wpm = handleTyping()
+      // Store the words per minute value
+
         setTimeout(() => {
-          alert("GAME OVER");
-          setGameon(false);
-          setCount(0);  
-        }, 0); // The 0ms delay ensures it's executed in the next tick.
-      }
+
+            alert("GAME OVER " + wpm + " words per minute");
+            setGameon(false);
+            setCount(0);
+
+        }, 2); // The 0ms delay ensures it's executed in the next tick.
+    }
 
     function handleclick() {
-       
+
         setBackgroundcolor(Array(ipsum.length).fill("white"));
         clearInterval(totalMilliseconds);
         setTotalMilliseconds(0);
         setGameon(true)
         setCount(0)
         setbacon(0)
+        settotalcorrect([])
         
+
+
     }
 
-    function stop(){
+    function stop() {
         setGameon(false)
         setCount(0)
         setbacon(0)
         setBackgroundcolor(Array(ipsum.length).fill("white"));
         clearInterval(totalMilliseconds);
         setTotalMilliseconds(0);
+       
+        settotalcorrect([])
     }
+
+
 
     function formatTime(totalMilliseconds) {
         const minutes = Math.floor(totalMilliseconds / 60000);
@@ -104,16 +112,32 @@ export default function Lorum() {
         const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
         const formattedMilliseconds = milliseconds < 100 ? `0${milliseconds}` : milliseconds < 10 ? `00${milliseconds}` : milliseconds;
         return `${formattedMinutes}:${formattedSeconds}:${formattedMilliseconds}`;
-      }
+    }
+
+
+    const handleTyping = () => {
+
+        const seconds = Math.floor((totalMilliseconds % 60000) / 1000);
+        if (seconds >= 60) {
+            // If one minute or more has passed, calculate and set WPM
+            const wordsPerMinute = Math.floor((totalcorrect.length / 5) / 60);
+            return wordsPerMinute;
+        } else {
+            // If less than one minute has passed, just show the total word count
+            let less = Math.floor(totalcorrect.length / 5)
+            return less;
+        }
+    };
+
     return (
         <>
             <button style={{
-            marginBottom: "1rem"
-            }}onClick={handleclick}> START</button>
+                marginBottom: "1rem"
+            }} onClick={handleclick}> START</button>
             <button onClick={stop}>STOP</button>
             <div>
-            <div>{formatTime(totalMilliseconds)} <strong>Time</strong> </div>
-            <div>{bacon}/{ipsum.length} <strong>Bacon</strong> </div>
+                <div>{formatTime(totalMilliseconds)} <strong>Time</strong> </div>
+                <div>{bacon}/{ipsum.length} <strong>Bacon</strong> </div>
             </div>
             <div
                 style={{
@@ -132,7 +156,7 @@ export default function Lorum() {
                                 height: "25px",
                                 padding: "1rem",
                                 backgroundColor: backgroundColor[index],
-                                fontSize:"25px"
+                                fontSize: "25px"
                             }}
                         >
                             {char === " " && "_"}
