@@ -7,15 +7,15 @@ import { getDatabase, ref, set } from "firebase/database";
 
 function writeUserData(userId, name) {
     const db = getDatabase();
-    try{
-       set(ref(db, 'users/' + userId), {
-        username: name,
-    });  
+    try {
+        set(ref(db, 'users/' + userId), {
+            username: name,
+        });
     }
-    catch{
+    catch {
         console.log("the error is here")
     }
-   
+
 
 }
 
@@ -64,7 +64,7 @@ export default function Profile() {
             {isAuthenticated ?
                 <div>
                     <BeautifulDropdown />
-                    <h1>My profile<br/>Under Construction</h1>
+                    <h1>My profile<br />Under Construction</h1>
                     <form onChange={handlechange} onSubmit={handlesubmit} style={{ display: "flex", flexDirection: "row", }}>
                         <input type="text" placeholder="username"></input>
                         <button disabled={disabled} onClick={handleclick}>Submit</button>
