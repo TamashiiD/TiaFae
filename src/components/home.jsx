@@ -20,6 +20,8 @@ function Home() {
                     <h1> Hello World </h1>
                     <p> Wanna Play Tag?</p>
                     <button > <Link className="links" to="/taggame">Touch</Link> </button>
+                    <p> Wanna Play Steal the Bacon?</p>
+                    <button><Link className="links" to="/stealthebacon">Touch</Link></button>
                 </div> :
 
                 <LogIn />

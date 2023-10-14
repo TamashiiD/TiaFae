@@ -9,8 +9,9 @@ import App from './App.jsx'
 import './index.css'
 import Profile from './components/profile.jsx';
 import Home from './components/home.jsx';
-import TagGame from './components/tag-game.jsx';
-import NewGame from './components/newgame.jsx';
+import TagGame from './components/taggame/tag-game.jsx';
+import NewGame from './components/taggame/newgame.jsx';
+import Bacon from './components/stealthebacon/steal-the-bacon.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,11 @@ const router = createBrowserRouter([
     path: "/taggame/*",
     element: <TagGame/>
   },
-  
+  {
+    path: "/stealthebacon/*",
+    element: <Bacon/>
+  }
+
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
