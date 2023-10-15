@@ -61,8 +61,9 @@ export default function Lorum() {
         } else {
             const newBackground = [...backgroundColor];
             newBackground[count] = "red";
-            gameover();
             setBackgroundcolor(newBackground);
+            gameover();
+            
 
         }
 
