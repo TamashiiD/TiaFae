@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { ipsum } from "./lorum";
+import { ipsum, essay1ready } from "./lorum";
 
 export default function Lorum() {
     const [totalMilliseconds, setTotalMilliseconds] = useState(0);
@@ -40,18 +40,18 @@ export default function Lorum() {
     }, [gameon, count, totalcorrect])
 
     function matching(key, count) {
-        if(count === ipsum.length-1){
+        if(count === essay1ready.length-1){
            
             endgamewin()
         }
-        if (ipsum[count] === "_" && key === " ") {
+        if (essay1ready[count] === "_" && key === " ") {
             const newBackground = [...backgroundColor];
             newBackground[count] = "green";
             setBackgroundcolor(newBackground);
             setCount(count + 1);
             setbacon(bacon + 1)
             settotalcorrect([...totalcorrect, key])
-        } else if (key.toLowerCase() === ipsum[count].toLowerCase()) {
+        } else if (key.toLowerCase() === essay1ready[count].toLowerCase()) {
             const newBackground = [...backgroundColor];
             newBackground[count] = "green";
             setBackgroundcolor(newBackground);
@@ -69,7 +69,7 @@ export default function Lorum() {
     }
 
     function endgamewin(){
-        setBackgroundcolor(Array(ipsum.length).fill("white"));
+        setBackgroundcolor(Array(essay1ready.length).fill("white"));
         const wpm = handleTyping()
         setTimeout(() => {
 
@@ -79,9 +79,9 @@ export default function Lorum() {
 
         }, 2);   
     }
-    
+
     function gameover() {
-        setBackgroundcolor(Array(ipsum.length).fill("white"));
+        setBackgroundcolor(Array(essay1ready.length).fill("white"));
         const wpm = handleTyping()
         // Store the words per minute value
 
@@ -96,7 +96,7 @@ export default function Lorum() {
 
     function handleclick() {
 
-        setBackgroundcolor(Array(ipsum.length).fill("white"));
+        setBackgroundcolor(Array(essay1ready.length).fill("white"));
         clearInterval(totalMilliseconds);
         setTotalMilliseconds(0);
         setGameon(true)
@@ -114,7 +114,7 @@ export default function Lorum() {
         setGameon(false)
         setCount(0)
         setbacon(0)
-        setBackgroundcolor(Array(ipsum.length).fill("white"));
+        setBackgroundcolor(Array(essay1ready.length).fill("white"));
         clearInterval(totalMilliseconds);
         setTotalMilliseconds(0);
 
@@ -167,7 +167,7 @@ export default function Lorum() {
             <button onClick={stop}>STOP</button>
             <div>
                 <div>{formatTime(totalMilliseconds)} <strong>Time</strong> </div>
-                <div>{bacon}/{ipsum.length} <strong>Bacon</strong> </div>
+                <div>{bacon}/{essay1ready.length} <strong>Bacon</strong> </div>
             </div>
             <div
                 style={{
@@ -177,7 +177,7 @@ export default function Lorum() {
                     marginBottom: "2rem"
 
                 }}>
-                {ipsum.map((char, index) => {
+                {essay1ready.map((char, index) => {
                     return (
                         <div
                             key={index}
