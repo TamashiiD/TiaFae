@@ -115,6 +115,33 @@ margin-bottom: 1rem;
 
 }
 
+#globe{
+  position: relative;
+  height: 300px;
+  width: 300px;
+  margin: 0.05em auto;
+  background: #888 url(https://www.surfertoday.com/images/stories/physical-world-map.jpg) 0 0 repeat;
+  border-radius: 50%;
+  background-size: 630px;
+  animation: rotates 10s linear infinite;
+  transition: transform 200ms linear;
+  transform-style: preserve-3d;
+  box-shadow: inset 20px 0 80px 6px rgb(0, 0, 0) ;
+  color: #000;
+}
+
+
+@keyframes rotates {
+0%{
+  background-position: 0 0;
+}
+100%{
+  background-position: 630px 0;
+}
+}
+
+
+
 
 
 @media (prefers-color-scheme: light) {

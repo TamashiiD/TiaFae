@@ -22,6 +22,7 @@ function Home() {
                     <button > <Link className="links" to="/taggame">Touch</Link> </button>
                     <p> Wanna Play Steal the Bacon?</p>
                     <button><Link className="links" to="/stealthebacon">Touch</Link></button>
+                    <div id="globe"></div>
                 </div> :
 
                 <LogIn />

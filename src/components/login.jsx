@@ -26,6 +26,7 @@ function LogIn() {
       <div className='likebutton' ref={buttonRef}>
         <button id="child" onClick={handleclick}>Enter</button>
       </div>
+      <div id="globe"></div>
     </>
   )
 }
