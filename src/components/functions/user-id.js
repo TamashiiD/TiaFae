@@ -4,7 +4,8 @@ export function userID(user) {
     const userId = user
     let cut = userId.indexOf("@")
     let replacethis = userId.slice(cut)
-    let updatedID = userId.replace(replacethis, "")
+    let id = userId.replace(replacethis, "")
+    let updatedID = id.replace(/[^a-zA-Z0-9]/g, '')
     return updatedID
 }
 
