@@ -66,6 +66,12 @@ button:focus-visible {
   display: flex;
   flex-direction: row;
   margin-right: 1000px;
+  
+}
+
+form{
+  margin-top: 10rem;
+
 }
 
 .dropdown-header {
@@ -73,6 +79,8 @@ button:focus-visible {
   background-color: #3498db;
   color: #fff;
   cursor: pointer;
+ margin-top: 3rem;
+ margin-bottom: 3rem;
 }
 
 .dropdown-options {
@@ -115,11 +123,24 @@ margin-bottom: 1rem;
 
 }
 
+#LOGO{
+  display:flex;
+  flex-direction: column;
+  margin-right: 700px;
+  margin-bottom: -1rem;
+
+}
+.logochild{
+  margin-right: 650px;
+  width: 250px;
+  margin-bottom: 5rem;
+}
+
 #globe{
   position: relative;
   height: 300px;
   width: 300px;
-  margin: 0.05em auto;
+  margin: 3rem auto;
   background: #888 url(https://www.surfertoday.com/images/stories/physical-world-map.jpg) 0 0 repeat;
   border-radius: 50%;
   background-size: 630px;

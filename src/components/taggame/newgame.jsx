@@ -119,6 +119,7 @@ export default function NewGame({ score, gameRunning, gamerunningtrue, setthesco
     const cube = {
         display: "flex",
         flexDirection: "row",
+        marginLeft: "6.5rem"
     };
 
     const isRed = (index) => index === redIndex;
